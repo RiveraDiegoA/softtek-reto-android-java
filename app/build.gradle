@@ -21,6 +21,23 @@ android {
         dataBinding = true
     }
 
+    flavorDimensions = ["version"]
+
+    productFlavors {
+        free {
+            dimension "version"
+            applicationIdSuffix ".free"
+            versionNameSuffix "-free"
+            resValue "string", "app_name", "Películas App (Free)"
+        }
+        paid {
+            dimension "version"
+            applicationIdSuffix ".paid"
+            versionNameSuffix "-paid"
+            resValue "string", "app_name", "Películas App (Premium)"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
