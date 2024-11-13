@@ -6,9 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
-    tools:context=".ui.splash_screen.SplashScreenActivity">
+    tools:context=".view.activities.SplashScreenActivity">
 
     <ImageView
+        android:id="@+id/a_sps_imv_logo"
         android:layout_width="@dimen/splash_s_logo_width"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"

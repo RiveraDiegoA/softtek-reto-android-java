@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Películas App (Sofftek - Reto Android)</string>
+    <!--animations-->
+    <string name="anim_fade_in">fade-in</string>
+    <string name="anim_fade_out">fade-out</string>
+    <!--content descriptions-->
     <string name="cd_imv_logo">logo</string>
 </resources>
