@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--general-->
+    <dimen name="_0">0dp</dimen>
+    <dimen name="_10">10dp</dimen>
+    <dimen name="_20">20dp</dimen>
+    <dimen name="_40">40dp</dimen>
+    <dimen name="_50">50dp</dimen>
+    <!--text-->
     <dimen name="text_headline">28sp</dimen>
     <dimen name="text_subhead">22sp</dimen>
     <dimen name="text_body">18sp</dimen>
@@ -7,5 +14,22 @@
     <dimen name="text_button">18sp</dimen>
     <dimen name="text_caption">14sp</dimen>
     <dimen name="text_error">16sp</dimen>
+    <!--logo-->
     <dimen name="splash_s_logo_width">100dp</dimen>
+    <dimen name="login_logo_height">60dp</dimen>
+    <!--margin-->
+    <dimen name="mrg_content">40dp</dimen>
+    <!--radius-->
+    <dimen name="radius_pill">40dp</dimen>
+    <!--elevation-->
+    <dimen name="elevation_base">2dp</dimen>
+    <!--button-->
+    <dimen name="button_size">36.6dp</dimen>
+    <dimen name="button_margin">5.7dp</dimen>
+    <!--input-->
+    <dimen name="input_size">49dp</dimen>
+    <!--validate-->
+    <dimen name="validate_image">100dp</dimen>
+    <!--layout-->
+    <dimen name="login_layout_input_min_height">170dp</dimen>
 </resources>

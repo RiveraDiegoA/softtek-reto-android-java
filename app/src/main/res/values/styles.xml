@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--base-->
+    <style name="wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="match">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="matchWrap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!--text-->
+    <style name="text" parent="wrap">
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="textHeadline" parent="text">
+        <item name="fontFamily">@font/roboto_bold</item>
+        <item name="android:textSize">@dimen/text_headline</item>
+    </style>
+
+    <style name="textSubHead" parent="text">
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">@dimen/text_subhead</item>
+    </style>
+
+    <style name="textSubHeadWhite" parent="textSubHead">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="textBody" parent="text">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/text_body</item>
+    </style>
+
+    <style name="textBodyWhite" parent="textBody">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="textBodyValidate" parent="textBodyWhite">
+        <item name="android:lines">6</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_marginTop">@dimen/_20</item>
+        <item name="android:layout_marginBottom">@dimen/_20</item>
+    </style>
+
+    <style name="textSecondary" parent="textBody">
+        <item name="android:textSize">@dimen/text_secondary</item>
+    </style>
+
+    <style name="textButton" parent="wrap">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">@dimen/text_button</item>
+    </style>
+
+    <style name="textCaption" parent="textBody">
+        <item name="android:textSize">@dimen/text_caption</item>
+    </style>
+
+    <style name="textError" parent="textBody">
+        <item name="android:textSize">@dimen/text_error</item>
+    </style>
+
+    <!--input-->
+    <style name="textInputLayoutFilled" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/_10</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/_10</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/_10</item>
+        <item name="boxCornerRadiusTopStart">@dimen/_10</item>
+        <item name="endIconMode">clear_text</item>
+    </style>
+
+    <style name="textInputLayoutFilledPassword" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/_10</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/_10</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/_10</item>
+        <item name="boxCornerRadiusTopStart">@dimen/_10</item>
+        <item name="passwordToggleEnabled">true</item>
+    </style>
+
+    <style name="textInputEditText" parent="matchWrap">
+        <item name="android:maxLength">255</item>
+    </style>
+
+    <style name="textInputEditTextUsername" parent="textInputEditText">
+        <item name="android:digits">@string/validate_alphanumeric</item>
+        <item name="android:maxLength">50</item>
+    </style>
+
+    <style name="textInputEditTextPassword" parent="textInputEditText">
+        <item name="android:inputType">textPassword</item>
+        <item name="android:digits">@string/validate_password</item>
+        <item name="android:maxLength">50</item>
+    </style>
+
+    <!--button-->
+    <style name="materialButton" parent="wrap">
+        <item name="textAllCaps">false</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">@dimen/text_button</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="cornerRadius">@dimen/radius_pill</item>
+        <item name="android:layout_marginStart">@dimen/button_margin</item>
+        <item name="android:layout_marginEnd">@dimen/button_margin</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="primaryButton" parent="materialButton" />
+
+    <style name="secondaryButton" parent="materialButton">
+        <item name="android:backgroundTint">@color/secondary</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="iconTint">@color/black</item>
+    </style>
+
+    <style name="button">
+        <item name="android:layout_width">@dimen/button_size</item>
+        <item name="android:layout_height">@dimen/button_size</item>
+        <item name="android:layout_marginStart">@dimen/button_margin</item>
+        <item name="android:layout_marginEnd">@dimen/button_margin</item>
+        <item name="android:layout_marginTop">@dimen/button_margin</item>
+        <item name="android:layout_marginBottom">@dimen/button_margin</item>
+        <item name="android:background">@drawable/btn_s_r_pill</item>
+        <item name="android:elevation">@dimen/elevation_base</item>
+    </style>
+
+    <style name="buttonInput" parent="button">
+        <item name="android:layout_width">@dimen/input_size</item>
+        <item name="android:layout_height">@dimen/input_size</item>
+    </style>
+
+    <!--image-->
+    <style name="image" parent="wrap">
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+
+    <style name="imageTop" parent="image">
+        <item name="android:layout_height">@dimen/validate_image</item>
+        <item name="android:layout_marginBottom">@dimen/_20</item>
+    </style>
+
+    <style name="imageTopWhite" parent="imageTop">
+        <item name="android:tint">@color/white</item>
+    </style>
+
+    <!--layout-->
+    <style name="layoutValidate" parent="matchWrap">
+        <item name="android:paddingTop">@dimen/mrg_content</item>
+        <item name="android:paddingBottom">@dimen/mrg_content</item>
+        <item name="android:paddingStart">@dimen/mrg_content</item>
+        <item name="android:paddingEnd">@dimen/mrg_content</item>
+    </style>
+</resources>

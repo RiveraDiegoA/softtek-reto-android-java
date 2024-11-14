@@ -2,10 +2,14 @@ package com.riveracompany.peliculasapp_sofftek_retoandroid.utils;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.riveracompany.peliculasapp_sofftek_retoandroid.R;
 
 public class Utils {
@@ -57,5 +61,34 @@ public class Utils {
         //
         context.startActivity(new Intent(context, cls));
     }
+
+    //EDIT TEXT
+    //
+    public void handleEditText(EditText editText, TextInputLayout textInputLayout) {
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String text = validateStringValue(s.toString());
+                if (!text.isEmpty()) textInputLayout.setErrorEnabled(false);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+    }
+
+    //
+    public void handleEditTextError(EditText editText, TextInputLayout textInputLayout, String message) {
+        textInputLayout.setErrorEnabled(true);
+        textInputLayout.setError(message);
+        editText.requestFocus();
+    }
+
 
 }
