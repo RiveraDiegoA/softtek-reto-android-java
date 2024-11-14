@@ -5,4 +5,18 @@
     <string name="anim_fade_out">fade-out</string>
     <!--content descriptions-->
     <string name="cd_imv_logo">logo</string>
+    <!--general-->
+    <string name="username">Nombre de usuario</string>
+    <string name="password">Contraseña</string>
+    <!--validations-->
+    <string name="validate_password">ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789()-_.,;:!¡¿?+/\'"$*#@%=°&amp;</string>
+    <string name="validate_numbers">1234567890</string>
+    <string name="validate_decimal_numbers">1234567890.1234567890</string>
+    <string name="validate_names">abcdefghijklmnñopqrstuvwxyzáéíóúü ABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚÜ</string>
+    <string name="validate_alphanumeric">ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789</string>
+    <string name="username_error_empty">Ingrese nombre de usuario</string>
+    <string name="password_error_empty">Ingrese contraseña</string>
+    <!--login-->
+    <string name="login">Iniciar sesión</string>
+    <string name="login_desc">Por favor inicie sesión para continuar</string>
 </resources>
