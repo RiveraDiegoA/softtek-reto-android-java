@@ -1,7 +1,7 @@
 package com.riveracompany.peliculasapp_sofftek_retoandroid.utils;
 
-import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -50,4 +50,12 @@ public class Utils {
         //
         imageView.startAnimation(animation);
     }
+
+    //REDIRECTIONS - TRANSITIONS
+    //
+    public void redirectActivity(Class<?> cls) {
+        //
+        context.startActivity(new Intent(context, cls));
+    }
+
 }

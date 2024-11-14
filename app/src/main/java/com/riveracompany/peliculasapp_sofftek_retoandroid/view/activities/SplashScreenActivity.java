@@ -46,5 +46,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     private void initializeView() {
         //start animation
         splashScreenController.startLogoAnimation(binding.aSpsImvLogo);
+        //navigate to Login
+        splashScreenController.startTransition();
     }
 }
