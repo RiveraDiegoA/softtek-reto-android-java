@@ -5,124 +5,196 @@
     android:id="@+id/a_lgn_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
     android:background="@drawable/background_gradient"
     tools:context=".view.activities.LoginActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/a_lgn_lyt_top"
+        android:id="@+id/a_lgn_lyt_content"
         android:layout_width="@dimen/_0"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/a_lgn_lyt_form"
+        android:layout_height="@dimen/_0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/a_lgn_lyt_top"
+            android:layout_width="@dimen/_0"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/a_lgn_lyt_form"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/a_lgn_imv_logo"
+                android:layout_width="@dimen/login_logo_height"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/cd_imv_logo"
+                android:src="@drawable/logo_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/a_lgn_lyt_form"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/a_lgn_lyt_top">
+
+            <TextView
+                android:id="@+id/a_lgn_txv_title"
+                style="@style/textHeadline"
+                android:layout_width="@dimen/_0"
+                android:layout_marginStart="@dimen/mrg_content"
+                android:layout_marginTop="@dimen/_0"
+                android:layout_marginEnd="@dimen/mrg_content"
+                android:layout_marginBottom="@dimen/_0"
+                android:text="@string/login"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@id/a_lgn_txv_desc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/a_lgn_txv_desc"
+                style="@style/textSecondary"
+                android:layout_width="@dimen/_0"
+                android:layout_marginTop="@dimen/_0"
+                android:layout_marginBottom="@dimen/_0"
+                android:text="@string/login_desc"
+                app:layout_constraintBottom_toTopOf="@id/a_lgn_lyt_inputs"
+                app:layout_constraintEnd_toEndOf="@id/a_lgn_txv_title"
+                app:layout_constraintStart_toStartOf="@id/a_lgn_txv_title"
+                app:layout_constraintTop_toBottomOf="@id/a_lgn_txv_title" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/a_lgn_lyt_inputs"
+                android:layout_width="@dimen/_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_50"
+                android:minHeight="@dimen/login_layout_input_min_height"
+                app:layout_constraintBottom_toTopOf="@id/a_lgn_btn_login"
+                app:layout_constraintEnd_toEndOf="@id/a_lgn_txv_desc"
+                app:layout_constraintStart_toStartOf="@id/a_lgn_txv_desc"
+                app:layout_constraintTop_toBottomOf="@id/a_lgn_txv_desc">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/a_lgn_til_username"
+                    style="@style/textInputLayoutFilled"
+                    android:layout_width="@dimen/_0"
+                    android:hint="@string/username"
+                    app:layout_constraintBottom_toTopOf="@id/a_lgn_til_password"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:startIconDrawable="@drawable/ic_person">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/a_lgn_edt_username"
+                        style="@style/textInputEditTextUsername"
+                        android:paddingStart="@android:dimen/app_icon_size"
+                        android:paddingEnd="@dimen/_0"
+                        tools:ignore="TooDeepLayout" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/a_lgn_til_password"
+                    style="@style/textInputLayoutFilledPassword"
+                    android:layout_width="@dimen/_0"
+                    android:layout_marginTop="@dimen/_20"
+                    android:hint="@string/password"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/a_lgn_til_username"
+                    app:layout_constraintStart_toStartOf="@id/a_lgn_til_username"
+                    app:layout_constraintTop_toBottomOf="@id/a_lgn_til_username"
+                    app:startIconDrawable="@drawable/ic_lock">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/a_lgn_edt_password"
+                        style="@style/textInputEditTextPassword"
+                        android:paddingStart="@android:dimen/app_icon_size"
+                        android:paddingEnd="@dimen/_0" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/a_lgn_btn_login"
+                style="@style/secondaryButton"
+                android:layout_width="@dimen/_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_0"
+                android:layout_marginTop="@dimen/_50"
+                android:layout_marginEnd="@dimen/_0"
+                android:layout_marginBottom="@dimen/_50"
+                android:text="@string/login"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/a_lgn_lyt_inputs"
+                app:layout_constraintStart_toStartOf="@id/a_lgn_lyt_inputs"
+                app:layout_constraintTop_toBottomOf="@id/a_lgn_lyt_inputs" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/a_lgn_lyt_validate"
+        style="@style/layoutValidate"
+        android:animateLayoutChanges="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/a_lgn_imv_logo"
-            android:layout_width="@dimen/login_logo_height"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:contentDescription="@string/cd_imv_logo"
-            android:src="@drawable/logo_white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/a_lgn_lyt_form"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:animateLayoutChanges="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/a_lgn_lyt_top">
-
-        <TextView
-            android:id="@+id/a_lgn_txv_title"
-            style="@style/textHeadline"
-            android:layout_width="@dimen/_0"
-            android:layout_marginStart="@dimen/mrg_content"
-            android:layout_marginTop="@dimen/_0"
-            android:layout_marginEnd="@dimen/mrg_content"
-            android:layout_marginBottom="@dimen/_0"
-            android:text="@string/login"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@id/a_lgn_txv_desc"
+            android:id="@+id/a_lgn_lyt_validate_imv"
+            style="@style/imageTopWhite"
+            android:contentDescription="@string/cd_imv_process"
+            android:src="@drawable/ic_search_activity"
+            app:layout_constraintBottom_toTopOf="@id/a_lgn_lyt_validate_txv_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/a_lgn_txv_desc"
-            style="@style/textSecondary"
-            android:layout_width="@dimen/_0"
-            android:layout_marginTop="@dimen/_0"
-            android:layout_marginBottom="@dimen/_0"
-            android:text="@string/login_desc"
-            app:layout_constraintBottom_toTopOf="@id/a_lgn_til_username"
-            app:layout_constraintEnd_toEndOf="@id/a_lgn_txv_title"
-            app:layout_constraintStart_toStartOf="@id/a_lgn_txv_title"
-            app:layout_constraintTop_toBottomOf="@id/a_lgn_txv_title" />
+            android:id="@+id/a_lgn_lyt_validate_txv_title"
+            style="@style/textSubHeadWhite"
+            android:text="@string/login_validate"
+            app:layout_constraintBottom_toTopOf="@id/a_lgn_lyt_validate_txv_desc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/a_lgn_lyt_validate_imv" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/a_lgn_til_username"
-            style="@style/textInputLayoutFilled"
-            android:layout_width="@dimen/_0"
-            android:layout_marginTop="@dimen/_50"
-            android:hint="@string/username"
-            app:layout_constraintBottom_toTopOf="@id/a_lgn_til_password"
-            app:layout_constraintEnd_toEndOf="@id/a_lgn_txv_desc"
-            app:layout_constraintStart_toStartOf="@id/a_lgn_txv_desc"
-            app:layout_constraintTop_toBottomOf="@id/a_lgn_txv_desc"
-            app:startIconDrawable="@drawable/ic_person">
+        <TextView
+            android:id="@+id/a_lgn_lyt_validate_txv_desc"
+            style="@style/textBodyValidate"
+            android:text="@string/login_validate_desc"
+            app:layout_constraintBottom_toTopOf="@id/a_lgn_lyt_validate_pb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/a_lgn_lyt_validate_txv_title" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/a_lgn_edt_username"
-                style="@style/textInputEditText"
-                android:paddingStart="@android:dimen/app_icon_size"
-                android:paddingEnd="@dimen/_0"
-                tools:ignore="TooDeepLayout" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/a_lgn_til_password"
-            style="@style/textInputLayoutFilledPassword"
-            android:layout_width="@dimen/_0"
-            android:layout_marginTop="@dimen/_20"
-            android:hint="@string/password"
-            app:layout_constraintBottom_toTopOf="@id/a_lgn_btn_login"
-            app:layout_constraintEnd_toEndOf="@id/a_lgn_til_username"
-            app:layout_constraintStart_toStartOf="@id/a_lgn_til_username"
-            app:layout_constraintTop_toBottomOf="@id/a_lgn_til_username"
-            app:startIconDrawable="@drawable/ic_lock">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/a_lgn_edt_user"
-                style="@style/textInputEditTextPassword"
-                android:paddingStart="@android:dimen/app_icon_size"
-                android:paddingEnd="@dimen/_0" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/a_lgn_btn_login"
-            style="@style/secondaryButton"
-            android:layout_width="@dimen/_0"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_0"
-            android:layout_marginTop="@dimen/_50"
-            android:layout_marginEnd="@dimen/_0"
-            android:layout_marginBottom="@dimen/_50"
-            android:text="@string/login"
+        <ProgressBar
+            android:id="@+id/a_lgn_lyt_validate_pb"
+            style="@style/wrap"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/a_lgn_til_password"
-            app:layout_constraintStart_toStartOf="@id/a_lgn_til_password"
-            app:layout_constraintTop_toBottomOf="@id/a_lgn_til_password" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/a_lgn_lyt_validate_txv_desc" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

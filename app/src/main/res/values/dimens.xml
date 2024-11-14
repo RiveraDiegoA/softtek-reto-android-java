@@ -28,4 +28,8 @@
     <dimen name="button_margin">5.7dp</dimen>
     <!--input-->
     <dimen name="input_size">49dp</dimen>
+    <!--validate-->
+    <dimen name="validate_image">100dp</dimen>
+    <!--layout-->
+    <dimen name="login_layout_input_min_height">170dp</dimen>
 </resources>
