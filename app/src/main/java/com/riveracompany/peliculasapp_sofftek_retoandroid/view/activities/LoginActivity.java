@@ -62,6 +62,8 @@ public class LoginActivity extends AppCompatActivity implements LoginResultCallb
     public void onLoginSuccess() {
         //
         handleValidateView(R.drawable.ic_verified_user, getString(R.string.login_success), getString(R.string.login_success_desc), false);
+        //
+        controller.startTransition();
     }
 
     @Override

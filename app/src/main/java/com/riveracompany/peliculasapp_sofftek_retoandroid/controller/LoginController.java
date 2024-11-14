@@ -6,9 +6,12 @@ import android.os.Handler;
 import com.riveracompany.peliculasapp_sofftek_retoandroid.R;
 import com.riveracompany.peliculasapp_sofftek_retoandroid.callback.LoginResultCallback;
 import com.riveracompany.peliculasapp_sofftek_retoandroid.utils.Utils;
+import com.riveracompany.peliculasapp_sofftek_retoandroid.view.activities.LoginActivity;
+import com.riveracompany.peliculasapp_sofftek_retoandroid.view.activities.MoviesActivity;
 
 public class LoginController {
     private static final int VALIDATION_VIEW_DURATION = 1500; //1.5 seconds
+    private static final int SCREEN_VIEW_DURATION = 1000; //1 second
     private final Context context;
     private final LoginResultCallback callback;
     public Utils utils;
@@ -19,6 +22,7 @@ public class LoginController {
         this.utils = new Utils(context);
     }
 
+    //
     public void handleLogin(String username, String password) {
         //
         username = utils.validateStringValue(username);
@@ -41,5 +45,22 @@ public class LoginController {
             }, VALIDATION_VIEW_DURATION);
         }
 
+    }
+
+    //
+    public void startTransition() {
+        new Handler().postDelayed(this::navigateToMovies, SCREEN_VIEW_DURATION);
+    }
+
+    //
+    private void navigateToMovies() {
+        utils.redirectActivity(MoviesActivity.class);
+        //
+        if (context instanceof LoginActivity) {
+            //animate transition
+            ((LoginActivity) context).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            //finish
+            ((LoginActivity) context).finish();
+        }
     }
 }
